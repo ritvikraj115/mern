@@ -7,7 +7,7 @@ require('./db/conn')
 //const User= require('./model/userSchema')
 app.use(express.json())
 app.use(require('./router/auth'))
-const port= 5000
+const port= process.env.PORT || 5000
 
 app.listen(5000, ()=>{
     console.log(`Server is running at ${port}`)
