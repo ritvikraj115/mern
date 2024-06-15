@@ -76,7 +76,7 @@ router.post('/register', async (req, res) => {
 
     }
 })
-router.post('https://mern-0ax4.onrender.com/login', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         let token;
         const { email, password } = req.body;
