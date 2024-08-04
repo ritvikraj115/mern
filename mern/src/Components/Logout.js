@@ -8,7 +8,7 @@ const Logout = (props) => {
     //promises
     const logOut= async()=>{
         try {
-            const res= await fetch('${backend}/logout',{
+            const res= await fetch(`${backend}/logout`,{
                 method:"GET",
                 headers:{
                   Accept:"application/json",
