@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 
-const backend= process.env.BACKEND_URL;
+const backend= process.env.REACT_APP_BACKEND_URL;
 const Signup = (props) => {
   const history=useNavigate()
   const [user, setUser]= useState({
