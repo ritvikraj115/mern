@@ -3,10 +3,11 @@ import { useState } from 'react';
 
 const Contact = (props) => {
   const [userData,setUserData]= useState({name:"", email:"", phone:"", message:""});
+  const backend= process.env.BACKEND_URL
   props.setProgress(0)
   const userContact= async()=>{
     try {
-      const res= await fetch('/getdata',{
+      const res= await fetch('${backend}/getdata',{
         method:"GET",
         headers:{
           "Content-Type":"application/json"
@@ -43,7 +44,7 @@ const Contact = (props) => {
   const contactForm= async(e)=>{
     e.preventDefault();
     const{name, email, phone, message}= userData;
-    const res= await fetch('/contact',{
+    const res= await fetch('${backend}/contact',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
