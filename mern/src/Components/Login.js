@@ -21,7 +21,7 @@ const Login = (props) => {
       e.preventDefault();
       props.setProgress(10);
 
-      const res= await fetch("${backend}/login", {
+      const res= await fetch(`${backend}/login`, {
          method:"POST",
          headers: {
            "Content-Type" : "application/json"
