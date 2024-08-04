@@ -5,7 +5,7 @@ const About = (props) => {
   props.setProgress(100);
   const history=useNavigate()
   const [userData,setUserData]= useState('');
-  const backend= process.env.BACKEND_URL
+  const backend= process.env.REACT_APP_BACKEND_URL
   const callAboutPage= async()=>{
     try {
       const res= await fetch(`${backend}/about`,{
