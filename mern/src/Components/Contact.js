@@ -7,7 +7,7 @@ const Contact = (props) => {
   props.setProgress(0)
   const userContact= async()=>{
     try {
-      const res= await fetch('${backend}/getdata',{
+      const res= await fetch(`${backend}/getdata`,{
         method:"GET",
         headers:{
           "Content-Type":"application/json"
@@ -44,7 +44,7 @@ const Contact = (props) => {
   const contactForm= async(e)=>{
     e.preventDefault();
     const{name, email, phone, message}= userData;
-    const res= await fetch('${backend}/contact',{
+    const res= await fetch(`${backend}/contact`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
