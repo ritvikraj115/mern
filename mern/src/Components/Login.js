@@ -8,7 +8,7 @@ const Login = (props) => {
    const history=useNavigate()
    const [email,setEmail]=useState('');
    const [password,setPassword]= useState('')
-   const backend= process.env.BACKEND_URL
+   const backend= process.env.REACT_APP_BACKEND_URL
 
    const handleE=(e)=>{
       setEmail(e.target.value)
