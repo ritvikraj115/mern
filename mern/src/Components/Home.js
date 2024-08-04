@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 const Home = () => {
   const [userName,setUsername]= useState('');
   const[show,setShow]= useState(false);
-  const backend= process.env.BACKEND_URL
+  const backend= process.env.REACT_APP_BACKEND_URL
   const userHome= async()=>{
     try {
       const res= await fetch(`${backend}/getdata`,{
