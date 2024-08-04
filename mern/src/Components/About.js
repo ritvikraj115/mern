@@ -5,9 +5,10 @@ const About = (props) => {
   props.setProgress(100);
   const history=useNavigate()
   const [userData,setUserData]= useState('');
+  const backend= process.env.BACKEND_URL
   const callAboutPage= async()=>{
     try {
-      const res= await fetch('/about',{
+      const res= await fetch('${backend}/about',{
         method:"GET",
         headers:{
           Accept:"application/json",
