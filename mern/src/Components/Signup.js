@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useNavigate} from 'react-router-dom'
 
-const backendUrl= process.env.BACKEND_URL;
+const backend= process.env.BACKEND_URL;
 const Signup = (props) => {
   const history=useNavigate()
   const [user, setUser]= useState({
@@ -18,7 +18,7 @@ const Signup = (props) => {
     e.preventDefault();
     const{ name, email, phone, work, password, cpassword }= user;
 
-    const res= await fetch("/register", {
+    const res= await fetch("${backend}/register", {
       method:"POST",
       headers: {
         "Content-Type" : "application/json"
