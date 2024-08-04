@@ -4,7 +4,7 @@ import { UserContext } from '../App'
 const Logout = (props) => {
   const {state, dispatch}= useContext(UserContext);
   const history= useNavigate()
-  const backend= process.env.BACKEND_URL
+  const backend= process.env.REACT_APP_BACKEND_URL
     //promises
     const logOut= async()=>{
         try {
