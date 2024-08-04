@@ -8,6 +8,7 @@ const Login = (props) => {
    const history=useNavigate()
    const [email,setEmail]=useState('');
    const [password,setPassword]= useState('')
+   const backend= process.env.BACKEND_URL
 
    const handleE=(e)=>{
       setEmail(e.target.value)
@@ -20,7 +21,7 @@ const Login = (props) => {
       e.preventDefault();
       props.setProgress(10);
 
-      const res= await fetch("/login", {
+      const res= await fetch("${backend}/login", {
          method:"POST",
          headers: {
            "Content-Type" : "application/json"
