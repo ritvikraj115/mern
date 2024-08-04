@@ -8,7 +8,7 @@ const About = (props) => {
   const backend= process.env.BACKEND_URL
   const callAboutPage= async()=>{
     try {
-      const res= await fetch('${backend}/about',{
+      const res= await fetch(`${backend}/about`,{
         method:"GET",
         headers:{
           Accept:"application/json",
