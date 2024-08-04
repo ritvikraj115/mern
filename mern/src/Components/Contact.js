@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 const Contact = (props) => {
   const [userData,setUserData]= useState({name:"", email:"", phone:"", message:""});
-  const backend= process.env.BACKEND_URL
+  const backend= process.env.REACT_APP_BACKEND_URL
   props.setProgress(0)
   const userContact= async()=>{
     try {
