@@ -18,7 +18,7 @@ const Signup = (props) => {
     e.preventDefault();
     const{ name, email, phone, work, password, cpassword }= user;
 
-    const res= await fetch("${backend}/register", {
+    const res= await fetch(`${backend}/register`, {
       method:"POST",
       headers: {
         "Content-Type" : "application/json"
