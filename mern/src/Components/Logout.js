@@ -3,11 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { UserContext } from '../App'
 const Logout = (props) => {
   const {state, dispatch}= useContext(UserContext);
-    const history= useNavigate()
+  const history= useNavigate()
+  const backend= process.env.BACKEND_URL
     //promises
     const logOut= async()=>{
         try {
-            const res= await fetch('/logout',{
+            const res= await fetch('${backend}/logout',{
                 method:"GET",
                 headers:{
                   Accept:"application/json",
