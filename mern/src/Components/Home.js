@@ -6,7 +6,7 @@ const Home = () => {
   const backend= process.env.BACKEND_URL
   const userHome= async()=>{
     try {
-      const res= await fetch('${backend}/getdata',{
+      const res= await fetch(`${backend}/getdata`,{
         method:"GET",
         headers:{
           "Content-Type":"application/json"
