@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: api
+  namespace: mern
+  labels: 
+    role: api
+spec: 
+  replicas: 2
+  strategy: 
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+  selector: 
+    matchLabels:
+      role: api
+  template:
+    metadata:
+      labels:
+        role: api
+    spec:
+      containers:
+      - name: api
+        image: ritvik115/backend:latest2
+        imagePullPolicy: Always
+        env:
+          - name: DATABASE
+            value: "mongodb://ritvikraj:Dhoni123@cluster0.mongodb.net/mern?retryWrites=true&w=majority"
+          - name: SECRET_KEY
+            value: "thisismysecretkey"
+          - name: PORT
+            value: "3500"
+        ports:
+        - containerPort: 3500
+        
